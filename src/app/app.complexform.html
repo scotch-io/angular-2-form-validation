@@ -1,0 +1,43 @@
+<div class="jumbotron">
+    <h2>Data Driven (Reactive) Form</h2>
+    <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+      <div class="form-group">
+        <label>First Name:</label>
+        <input class="form-control" type="text" placeholder="John" [formControl]="complexForm.controls['firstName']">
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input class="form-control" type="text" placeholder="Doe" [formControl]="complexForm.controls['lastName']">
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="Male" [formControl]="complexForm.controls['gender']">
+          Male
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gender" value="Female" [formControl]="complexForm.controls['gender']">
+          Female
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Activities</label>
+      </div>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="hiking" name="hiking" [formControl]="complexForm.controls['hiking']"> Hiking
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="swimming" name="swimming" [formControl]="complexForm.controls['swimming']"> Swimming
+      </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" value="running" name="running" [formControl]="complexForm.controls['running']"> Running
+      </label>
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </form>
+  </div>
